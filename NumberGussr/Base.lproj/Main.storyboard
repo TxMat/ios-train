@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="2307.6335877862593" y="-261.26760563380282"/>
         </scene>
-        <!--View Controller-->
+        <!--Random Color View Controller-->
         <scene sceneID="kYY-0e-pfB">
             <objects>
-                <viewController id="gix-6Z-zyC" sceneMemberID="viewController">
+                <viewController id="gix-6Z-zyC" customClass="RandomColorViewController" customModule="NumberGussr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2b5-2N-oHp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <color key="tintColor" systemColor="tintColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UCO-pc-p6s"/>
+                    <navigationItem key="navigationItem" style="editor" id="UCO-pc-p6s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2H-wG-A2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
         sliderValue = 50
         updateSliderAndStepper(value: sliderValue)
         guessLabel.text = "Make a guess!"
-        lastGuessLabel.text = "-"
+        lastGuessLabel.text = "--"	
         resetGameBtn.isEnabled = false
     }
     
