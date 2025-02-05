@@ -13,60 +13,66 @@ class GameViewController: UIViewController {
     var secretNumber = 0
     var sliderValue: Int = 0
 
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var lastGuessLabel: UILabel!
+    @IBOutlet weak var guessLabel: UILabel!
+    
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBOutlet weak var resetGameBtn: UIButton!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         secretNumber = Int.random(in: 1...100)
     }
     
-    @IBOutlet weak var numberLabel: UILabel!
-    
-    @IBOutlet weak var LastGuess: UILabel!
-    
-    @IBOutlet weak var Stepper: UIStepper!
-    
-    @IBOutlet weak var Slider: UISlider!
-    @IBOutlet weak var GuessLabel: UILabel!
-    
-    @IBAction func OnPreciseControl(_ sender: UIStepper, forEvent event: UIEvent) {
-        print("Slider changed")
-        numberLabel.text = String(Int(sender.value))
-        sliderValue = Int(sender.value)
-        Slider.value = Float(sliderValue)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        resetGame()
     }
     
-    @IBAction func OnValueChanged(_ sender: UISlider, forEvent event: UIEvent) {
-        print("Slider changed")
-        numberLabel.text = String(Int(sender.value))
-        sliderValue = Int(sender.value)
-        Stepper.value = Double(sliderValue)
+    private func updateSliderAndStepper(value: Int) {
+        numberLabel.text = String(value)
+        sliderValue = value
+        slider.value = Float(value)
+        stepper.value = Double(value)
     }
     
-    @IBAction func OnGuess(_ sender: UIButton) {
-        print("Pressed")
+    private func resetGame() {
+        secretNumber = Int.random(in: 1...100)
+        numberOfGuesses = 0
+        sliderValue = 50
+        updateSliderAndStepper(value: sliderValue)
+        guessLabel.text = "Make a guess!"
+        lastGuessLabel.text = "-"
+        resetGameBtn.isEnabled = false
+    }
+    
+    @IBAction func onPreciseControl(_ sender: UIStepper, forEvent event: UIEvent) {
+        updateSliderAndStepper(value: Int(sender.value))
+    }
+    
+    @IBAction func onValueChanged(_ sender: UISlider, forEvent event: UIEvent) {
+        updateSliderAndStepper(value: Int(sender.value))
+    }
+    
+    @IBAction func onGuess(_ sender: UIButton) {
         numberOfGuesses += 1
         if sliderValue > secretNumber {
-            GuessLabel.text = "Too high"
+            guessLabel.text = "Too high"
         } else if sliderValue < secretNumber {
-            GuessLabel.text = "Too low"
+            guessLabel.text = "Too low"
         } else {
-            GuessLabel.text = "You win in \(numberOfGuesses) guesses"
+            guessLabel.text = "You win in \(numberOfGuesses) guesses!"
+            resetGameBtn.isEnabled = true
         }
-        LastGuess.text = String(sliderValue)
+        lastGuessLabel.text = String(sliderValue)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onResetGame(_ sender: UIButton) {
+        resetGame()
     }
-    */
-
 }
+

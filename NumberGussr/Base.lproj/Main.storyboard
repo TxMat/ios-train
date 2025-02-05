@@ -63,7 +63,7 @@
                                 <rect key="frame" x="77" y="302" width="238" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="OnValueChanged:forEvent:" destination="Ba0-Xq-Kiq" eventType="valueChanged" id="svi-q9-inZ"/>
+                                    <action selector="onValueChanged:forEvent:" destination="Ba0-Xq-Kiq" eventType="valueChanged" id="3az-um-tXO"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOy-Qq-aUr">
@@ -72,7 +72,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Guess"/>
                                 <connections>
-                                    <action selector="OnGuess:" destination="Ba0-Xq-Kiq" eventType="touchUpInside" id="lvG-B4-nTr"/>
+                                    <action selector="onGuess:" destination="Ba0-Xq-Kiq" eventType="touchUpInside" id="D6x-lJ-HCn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FI-3O-rjq">
@@ -89,8 +89,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make your first guess !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdL-98-gWd">
-                                <rect key="frame" x="110" y="436" width="172" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make your first guess !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdL-98-gWd">
+                                <rect key="frame" x="72" y="438" width="248" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -100,7 +100,7 @@
                                 <rect key="frame" x="149" y="367" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="OnPreciseControl:forEvent:" destination="Ba0-Xq-Kiq" eventType="valueChanged" id="OuQ-g9-ai5"/>
+                                    <action selector="onPreciseControl:forEvent:" destination="Ba0-Xq-Kiq" eventType="valueChanged" id="C8a-sG-btQ"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rD-XH-Q4a">
@@ -110,17 +110,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUH-rJ-B8J">
+                                <rect key="frame" x="138" y="754" width="117" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset Game"/>
+                                <connections>
+                                    <action selector="onResetGame:" destination="Ba0-Xq-Kiq" eventType="touchUpInside" id="PaK-S0-Wmk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EIp-2U-Skq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Guess ?" id="Hc6-vR-DHn"/>
                     <connections>
-                        <outlet property="GuessLabel" destination="NdL-98-gWd" id="QyN-zm-HDp"/>
-                        <outlet property="LastGuess" destination="1rD-XH-Q4a" id="It2-G4-qLC"/>
-                        <outlet property="Slider" destination="BwL-lC-mxG" id="mDB-zW-Nx4"/>
-                        <outlet property="Stepper" destination="663-Rc-LW0" id="Evw-5m-9CC"/>
-                        <outlet property="numberLabel" destination="7FI-3O-rjq" id="kNn-c5-pJi"/>
+                        <outlet property="guessLabel" destination="NdL-98-gWd" id="9Sv-Cr-ZPD"/>
+                        <outlet property="lastGuessLabel" destination="1rD-XH-Q4a" id="da4-xb-X4M"/>
+                        <outlet property="numberLabel" destination="7FI-3O-rjq" id="8a6-5e-Qko"/>
+                        <outlet property="resetGameBtn" destination="nUH-rJ-B8J" id="zAf-m7-GJt"/>
+                        <outlet property="slider" destination="BwL-lC-mxG" id="vqZ-7f-eUG"/>
+                        <outlet property="stepper" destination="663-Rc-LW0" id="eFU-0V-q71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0Q-tK-0Zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
