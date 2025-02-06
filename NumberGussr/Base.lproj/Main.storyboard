@@ -163,7 +163,7 @@
             </objects>
             <point key="canvasLocation" x="2308" y="429"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Photo omg-->
         <scene sceneID="06M-Hy-2QX">
             <objects>
                 <viewController id="9hx-Rt-oUD" customClass="CameraViewController" customModule="NumberGussr" customModuleProvider="target" sceneMemberID="viewController">
@@ -171,25 +171,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xy8-ib-QdU">
-                                <rect key="frame" x="158" y="574" width="78" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="aaaaaa"/>
-                                <connections>
-                                    <action selector="capturePhoto:" destination="9hx-Rt-oUD" eventType="touchUpInside" id="rng-Hp-fGy"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AII-ad-WmM">
-                                <rect key="frame" x="16" y="103" width="361" height="415"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xy8-ib-QdU">
+                                        <rect key="frame" x="151" y="751" width="91" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Photo lol"/>
+                                        <connections>
+                                            <action selector="capturePhoto:" destination="9hx-Rt-oUD" eventType="touchUpInside" id="rng-Hp-fGy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yqp-1v-hZh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DA7-V8-3EG"/>
+                    <navigationItem key="navigationItem" title="Photo omg" style="editor" id="DA7-V8-3EG"/>
                     <connections>
                         <outlet property="previewView" destination="AII-ad-WmM" id="YGx-eR-jU0"/>
                     </connections>
@@ -222,10 +224,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
